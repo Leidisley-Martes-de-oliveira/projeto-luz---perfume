@@ -11,6 +11,7 @@
       box-shadow: 0px 0px 10px gray;
     }
     input {
+      border-radius: 30px;
       width: 90%;
       padding: 10px;
       margin: 10px;
@@ -49,5 +50,5 @@ footer {
   padding: 10px;
   background-color: #3ea3af;
   color: #fff;
-  margin-top: 200px;
+  margin-top: 85px;
 }

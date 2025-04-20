@@ -1,1 +1,0 @@
-O index2.html obriga está logado para adiconar produtos ao carrinho.

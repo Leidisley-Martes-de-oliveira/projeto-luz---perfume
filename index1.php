@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Faby Aromas</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="styles2.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles2.css">
 </head>
 <body>
   <header>
     LUZ & PERFUME. 
     <div class="login">
-      <a href="login.html">Login</a>
+      <a href="login.php">Login</a>
     </div>
   </header><br><br><br>
   <main>
@@ -36,14 +36,14 @@
           <img src="img/vela2.jpeg" alt="Vela Aromatizada" width="100" height="100">
           <h3>Vela Aromatizada</h3>
           <p>R$25,99</p>
-         <button onclick="adicionarAoCarrinho('Vela Aromatizada', 25.99, 'img/vela2.jpeg')">Adicionar ao Carrinho</button>
+	        <button onclick="adicionarAoCarrinho('Vela Aromatizada', 25.99, 'img/vela2.jpeg')">Adicionar ao Carrinho</button>
         </div>
         
         <!-- produto 3 --> 
         <div class="produto">
           <img src="img/vela3.jpeg" alt="Vela Aromatizada" width="100" height="100">
           <h3>Vela Aromatizada</h3>
-          <p>R$48,50</p>
+          <p>R$25,99</p>
           <button onclick="adicionarAoCarrinho('Vela Aromatizada', 25.99, 'img/vela3.jpeg')">Adicionar ao Carrinho</button>
         </div>
 
@@ -62,7 +62,7 @@
             <img src="img/vela5.jpeg" alt="Vela Aromatizada" width="100" height="100">
             <h3>Vela Aromatizada</h3>
             <p>R$25,99</p>
-            <button onclick="adicionarAoCarrinho('Vela Aromatizada', 25.99, 'img/vela5.jpeg')">Adicionar ao Carrinho</button>
+            <button onclick="adicionarAoCarrinho('img/Vela Aromatizada', 25.99, 'img/vela5.jpeg')">Adicionar ao Carrinho</button>
         </div>
    
         
@@ -71,7 +71,7 @@
           <img src="img/vela6.jpeg" alt="Vela Aromatizada" width="100" height="100">
           <h3>Vela Aromatizada</h3>
           <p>R$25,99</p>
-          <button onclick="adicionarAoCarrinho('Vela Aromatizada', 25.99, 'img/vela6.jpeg')">Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho('img/Vela Aromatizada', 25.99, 'img/vela6.jpeg')">Adicionar ao Carrinho</button>
         </div>
 
         <!-- produto 7 -->
