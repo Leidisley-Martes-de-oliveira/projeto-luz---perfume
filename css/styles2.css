@@ -1,0 +1,24 @@
+.login {
+      position: absolute;
+      top: 20px;
+      right: 220px;
+      font-size: 18px;
+    }
+
+    .carrinho { 
+      margin-top: 30px; 
+      text-align: center;
+      padding: 20px; 
+     left: 0;
+     width: 100%;
+     z-index: 1000;
+    }
+    button { 
+      background-color: #2ecc71;
+      color: #fff;
+      border: none;
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-left: 10px; }

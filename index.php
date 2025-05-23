@@ -94,14 +94,14 @@ $userId = $u->getUserId();
         <!-- Produto 3 -->
         <div class="produto">
           <img src="img/vela3.jpeg" alt="Vela Aromática ">
-          <h3>Vela aromática Buque de Flores</h3>
+          <h3>Vela aromática Cascas & Folhas</h3>
           <p>R$25,99</p>
           <button onclick="adicionarAoCarrinho('Vela Aromática ', 25.99, 'img/vela3.jpeg')">Adicionar ao Carrinho</button>
         </div>
         <!-- Produto 4 -->
         <div class="produto">
           <img src="img/vela4.jpeg" alt="Vela Aromática ">
-          <h3>Vela Aromática Cascas & Folhas</h3>
+          <h3>Vela Aromática Buque de Flores</h3>
           <p>R$25,99</p>
           <button onclick="adicionarAoCarrinho('Vela Aromática ', 25.99, 'img/vela4.jpeg')">Adicionar ao Carrinho</button>
         </div>
@@ -129,7 +129,7 @@ $userId = $u->getUserId();
         <!-- Produto 8 -->
         <div class="produto">
           <img src="img/vela8.jpeg" alt="Vela Aromática ">
-          <h3>Vela Aromática Frutas Vermelhas</h3>
+          <h3>Vela Aromática Flor de Algodão</h3>
           <p>R$25,99</p>
           <button onclick="adicionarAoCarrinho('Vela Aromática ', 25.99, 'img/vela8.jpeg')">Adicionar ao Carrinho</button>
         </div>

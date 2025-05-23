@@ -1,4 +1,5 @@
 function buscarCep() {
+<<<<<<< HEAD
     // Pega o valor do input de CEP e remove caracteres não numéricos
     var cep = document.getElementById("cep").value.replace(/\D/g, "");
   
@@ -46,3 +47,21 @@ function buscarCep() {
         document.getElementById("endereco").value = ""; // Limpa o campo em caso de erro
       });
   }
+=======
+      var cep = document.getElementById('cep').value.replace(/\D/g, '');
+      if (cep.length !== 8) {
+        alert("CEP inválido!");
+        return;
+      }
+      fetch(`https://viacep.com.br/ws/${cep}/json/`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.erro) {
+            alert("CEP não encontrado!");
+          } else {
+            document.getElementById('endereco').value = `${data.logradouro}, ${data.bairro}, ${data.localidade} - ${data.uf}`;
+          }
+        })
+        .catch(error => console.error('Erro ao buscar CEP:', error));
+    }
+>>>>>>> 8e32636e889cf19168819f3897b67fdb662befa0
