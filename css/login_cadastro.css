@@ -1,0 +1,230 @@
+/* Importação da fonte (repetido para garantir, idealmente só no styles.css principal) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+/* Reset básico e box-sizing */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuração de tamanho de fonte base */
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #eeffdb; /* Fundo verde claro */
+    color: #333; /* Cor de texto padrão */
+    line-height: 1.6;
+    padding-top: 80px; /* Espaço para o header fixo (se houver) */
+    display: flex; /* Usa flexbox para centralizar o conteúdo na página */
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da viewport */
+}
+
+/* Estilos do Cabeçalho (se for diferente do principal, caso contrário, remova e use o styles.css) */
+header {
+    background-color: #3ea3af; /* Teal/Ciano */
+    display: flex;
+    color: #fff;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    font-size: 2.4rem;
+}
+
+
+main { /* Adicionado main para envolver o container */
+    flex-grow: 1; /* Permite que o main ocupe o espaço restante, empurrando o footer para baixo */
+    display: flex;
+    justify-content: center; /* Centraliza o container horizontalmente */
+    align-items: center; /* Centraliza o container verticalmente */
+    width: 100%;
+    padding: 2rem; /* Padding interno */
+}
+
+
+/* Estilos do Container do Formulário */
+.container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 3rem; /* Padding interno */
+    width: 100%;
+    max-width: 400px; /* Largura máxima do formulário */
+    text-align: center;
+}
+
+.container h2 {
+    font-size: 2.8rem;
+    color: #3ea3af;
+    margin-bottom: 2.5rem;
+}
+
+/* Estilos do Formulário */
+form {
+    display: flex;
+    flex-direction: column; /* Empilha os elementos do formulário */
+    align-items: stretch; /* Faz os inputs e botões ocuparem a largura total */
+}
+
+label {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    text-align: left; /* Alinha o texto do label à esquerda */
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.6rem;
+    width: 100%; /* Garante que o input ocupe a largura total do container */
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: #999; /* Cor do placeholder */
+}
+
+button[type="submit"] {
+    background-color: #2ecc71; /* Verde */
+    color: #fff;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #1abc9c; /* Verde mais escuro */
+}
+
+.container a {
+    font-size: 1.6rem;
+    color: #3ea3af;
+    text-decoration: none;
+    margin-top: 1.5rem;
+    display: inline-block; /* Permite aplicar margin-top */
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para Mensagens (Sucesso/Erro) */
+.mensagem-sucesso {
+    color: #27ae60; /* Verde */
+    background-color: #e9f7ef;
+    border: 1px solid #27ae60;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.mensagem-erro {
+    color: #c0392b; /* Vermelho */
+    background-color: #fdedec;
+    border: 1px solid #c0392b;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Estilos do Rodapé (se for diferente do principal, caso contrário, remova e use o styles.css) */
+footer {
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 2rem;
+    background-color: #3ea3af;
+    color: #fff;
+    width: 100%; /* Ocupa a largura total */
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas menores (ex: celulares) - Estilos base já são para mobile first */
+
+/* Telas médias (ex: tablets) */
+@media (min-width: 768px) {
+    .container {
+        padding: 4rem;
+    }
+
+    .container h2 {
+        font-size: 3.2rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: 1.4rem;
+        font-size: 1.7rem;
+    }
+
+    button[type="submit"] {
+        padding: 1.8rem;
+        font-size: 2rem;
+    }
+
+    .container a {
+        font-size: 1.7rem;
+    }
+}
+
+/* Telas grandes (ex: desktops) */
+@media (min-width: 1024px) {
+    .container {
+        padding: 5rem;
+        max-width: 450px;
+    }
+
+    .container h2 {
+        font-size: 3.4rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: 1.5rem;
+        font-size: 1.8rem;
+    }
+
+    button[type="submit"] {
+        padding: 2rem;
+        font-size: 2.2rem;
+    }
+
+    .container a {
+        font-size: 1.8rem;
+    }
+}

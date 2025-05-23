@@ -1,0 +1,382 @@
+/* Importação da fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+/* Reset básico e configuração de box-sizing */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Facilita o cálculo de larguras com padding/border */
+}
+
+/* Configuração de tamanho de fonte base para facilitar REM */
+html {
+    font-size: 62.5%; /* 1rem = 10px. Usamos REM para tamanhos de fonte e padding/margin */
+    scroll-behavior: smooth; /* Rolagem suave para âncoras, se usar */
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #eeffdb; /* Fundo verde claro */
+    color: #333; /* Cor de texto padrão mais escura */
+    line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
+    padding-top: 80px; /* Espaço para o header fixo, evita que o conteúdo fique escondido */
+}
+
+/* Estilos do Cabeçalho */
+header {
+    background-color: #3ea3af; /* Teal/Ciano */
+    color: #fff;
+    padding: 1.5rem 2rem; /* Padding responsivo */
+    /* text-align: center; REMOVIDO */
+    position: fixed; /* Header fixo no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+
+    display: flex; /* Usa Flexbox para alinhar itens (título/logo e links) */
+    /* justify-content: space-between; ALTERADO */
+    justify-content: center; /* Centraliza o conteúdo flex (os divs filhos) */
+    align-items: center; /* Alinha verticalmente os itens ao centro */
+    flex-wrap: wrap; /* Permite quebra de linha se houver muitos itens ou tela estreita */
+}
+
+/* Estilo para o container do título/logo */
+.site-title {
+    flex-grow: 1; /* Permite que o título cresça, empurrando outros itens */
+    text-align: center; /* Centraliza o texto DENTRO deste div */
+    /* Se você não quiser que ele cresça, remova flex-grow */
+}
+
+header h1 {
+    font-size: 2.4rem; /* Tamanho do título */
+    margin: 0; /* Remove margem padrão do h1 */
+    /* text-align: center; Pode ser redundante se .site-title já tem text-align */
+}
+
+/* Estilo para o container dos links */
+.header-links {
+    display: flex; /* Já estava como display: flex */
+    gap: 1.5rem; /* Espaço entre os links */
+    align-items: center;
+    /* Mantenha ou ajuste o position: absolute se quiser que fiquem no canto */
+    position: absolute; /* Posiciona os links absolutamente */
+    top: 50%; /* Alinha verticalmente ao centro do header */
+    right: 2rem; /* Distância da direita */
+    transform: translateY(-50%); /* Ajusta para centralizar verticalmente */
+}
+
+.header-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.8rem; /* Tamanho do link */
+    transition: color 0.3s ease; /* Transição suave na cor ao passar o mouse */
+}
+
+.header-links a:hover {
+    color: #f0f0f0; /* Cor mais clara ao passar o mouse */
+}
+
+/* Estilos da Seção Principal */
+main {
+    width: 100%;
+    max-width: 1200px; /* Limita a largura máxima do conteúdo principal */
+    margin: 0 auto; /* Centraliza o conteúdo principal na página */
+    padding: 2rem; /* Padding interno do main */
+}
+
+/* Estilos da Seção de Hero/Slogan (section com class="hero-section" no seu HTML) */
+.hero-section {
+    text-align: center;
+    margin-bottom: 4rem; /* Espaço abaixo da seção */
+    padding: 2rem;
+    background-color: #fff; /* Fundo branco para destacar */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-section h2 {
+    /* LINHA AQUI: Ajuste o tamanho do h2 do slogan se ainda estiver grande */
+    font-size: 2.2rem; /* Exemplo: Tamanho reduzido (22px). Ajuste se necessário. */
+    color: #3ea3af; /* Cor do cabeçalho */
+    margin-bottom: 1.5rem;
+}
+
+/* Estilos do Grid de Produtos (div com class="product-grid" no seu HTML) */
+/* CONFIGURAMOS O LAYOUT EM GRADE RESPONSIVO */
+.product-grid {
+    display: grid; /* Define este div como um container Grid. CORRETO. */
+
+    /* LINHA 1: Configuração de colunas Padrão (Mobile First). */
+    /* Em telas pequenas (< 768px), queremos 1 coluna. */
+    grid-template-columns: repeat(1, 1fr);
+    /* LINHA 2: Espaçamento entre os itens do grid. */
+    gap: 1.5rem; /* Espaçamento menor para telas pequenas (15px). */
+
+    padding: 2rem 0; /* Mantenha o padding superior e inferior do grid */
+}
+
+/* Estilos do Item de Produto (div com class="produto" no seu HTML) */
+.produto {
+    /* LINHA AQUI: Cor de fundo suave para os cards */
+    background-color: #e1f5f6; /* Exemplo: Um tom suave de ciano/azul claro */
+
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem; /* Padding interno */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito suave ao passar o mouse */
+
+    /* Removido: width: ...; */
+    /* Removido: margin: ...; */
+}
+
+.produto:hover {
+    transform: translateY(-5px); /* Levanta o card ligeiramente ao passar o mouse */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra maior no hover */
+}
+
+/* LINHA AQUI: Estilo para o título do produto (h3 dentro de .produto) */
+.produto h3 {
+    /* LINHA 3: TAMANHO BASE PARA TELAS PEQUENAS (< 768px) */
+    /* Definimos o menor tamanho desejado aqui. */
+    font-size: 1.6rem; /* Exemplo: 16px em mobile. Ajuste se necessário. */
+    margin-bottom: 0.8rem;
+    color: #555;
+}
+
+.produto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.produto p {
+    font-size: 1.6rem;
+    color: #2ecc71;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.produto button {
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    padding: 1.2rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    transition: background-color 0.3s ease;
+}
+
+.produto button:hover {
+    background-color: #1abc9c;
+}
+
+
+/* Estilos do Carrinho (seção com class="carrinho-section") */
+.carrinho-section {
+    margin-top: 4rem;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.carrinho-section h2 {
+     font-size: 2.4rem;
+     color: #3ea3af;
+     margin-bottom: 2rem;
+}
+
+#carrinho-lista-container {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+#carrinho-lista-container .carrinho-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    font-size: 1.5rem;
+    color: #555;
+}
+
+#carrinho-lista-container .carrinho-item:last-child {
+    border-bottom: none;
+}
+
+#carrinho-lista-container .carrinho-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 1.5rem;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+#carrinho-lista-container .carrinho-item button {
+    margin-left: auto;
+    padding: 0.5rem 1rem;
+    font-size: 1.4rem;
+    background-color: #e74c3c;
+}
+
+#carrinho-lista-container .carrinho-item button:hover {
+     background-color: #c0392b;
+}
+
+.carrinho-total {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    text-align: right;
+    color: #3ea3af;
+}
+
+.carrinho-comprar-button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 1.5rem 3rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease;
+}
+
+.carrinho-comprar-button:hover {
+    background-color: #2980b9;
+}
+
+
+/* Estilos do Rodapé */
+footer {
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 2rem;
+    background-color: #3ea3af;
+    color: #fff;
+    margin-top: 4rem;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* Estilos para Mensagens (Sucesso/Erro) */
+.mensagem-sucesso {
+    color: #27ae60;
+    background-color: #e9f7ef;
+    border: 1px solid #27ae60;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.mensagem-erro {
+    color: #c0392b;
+    background-color: #fdedec;
+    border: 1px solid #c0392b;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+/* --- Media Queries para Responsividade --- */
+
+/* LINHA 4: Media Query para telas médias (Tablets e maiores) */
+/* Quando a largura da tela for 768px ou mais */
+@media (min-width: 768px) {
+    /* Mantenha seus outros estilos para min-width: 768px aqui */
+    header { padding: 1.5rem 4rem; }
+    main { padding: 2rem 4rem; }
+    .hero-section h2 { font-size: 3.2rem; } /* Ajusta tamanho do slogan */
+    .produto { padding: 1.5rem; } /* Ajusta padding interno do card */
+    .produto p { font-size: 1.5rem; } /* Ajusta tamanho do preço/descrição */
+    .produto button { padding: 1rem 1.5rem; font-size: 1.5rem; } /* Ajusta botão */
+    .carrinho-section { padding: 3rem; }
+    .carrinho-section h2 { font-size: 2.8rem; }
+    .carrinho-total { font-size: 2.2rem; }
+    .carrinho-comprar-button { padding: 1.5rem 3rem; font-size: 1.8rem; }
+    footer { font-size: 1.5rem; padding: 2.5rem; }
+
+    /* LINHA 5: Configuração do Grid para 2 colunas em tablets */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+        gap: 2rem; /* 20px */
+    }
+
+    /* LINHA 6: Tamanho do título do produto para tablets */
+    .produto h3 {
+        font-size: 1.7rem; /* Exemplo: Um pouco maior que o base (17px) */
+    }
+}
+
+/* LINHA 7: Media Query para telas grandes (Desktops e maiores) */
+/* Quando a largura da tela for 1024px ou mais */
+@media (min-width: 1024px) {
+    /* Mantenha seus outros estilos para min-width: 1024px aqui */
+    header { padding: 1.5rem 6rem; }
+    main { padding: 3rem 6rem; }
+    .hero-section h2 { font-size: 3.6rem; } /* Ajusta tamanho do slogan */
+    .produto { padding: 2rem; } /* Ajusta padding interno do card */
+    .produto p { font-size: 1.6rem; } /* Ajusta tamanho do preço/descrição */
+    .produto button { padding: 1.2rem 2rem; font-size: 1.6rem; } /* Ajusta botão */
+    .carrinho-section { padding: 4rem; }
+    .carrinho-section h2 { font-size: 3rem; }
+    .carrinho-total { font-size: 2.4rem; }
+    .carrinho-comprar-button { padding: 1.8rem 3.5rem; font-size: 2rem; }
+    footer { font-size: 1.6rem; padding: 3rem; }
+
+    /* LINHA 8: Configuração do Grid para 3 colunas em desktops */
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+        gap: 2.5rem; /* 25px */
+    }
+
+    /* LINHA 9: Tamanho do título do produto para desktops */
+    .produto h3 {
+        font-size: 1.8rem; /* Exemplo: Maior que em tablets (18px) */
+    }
+}
+
+/* Opcional: Media Query para telas muito grandes (ex: 1200px ou mais) */
+/* Adicione este bloco se quiser 4 colunas em telas extra largas */
+/*
+@media (min-width: 1200px) {
+     .product-grid {
+        grid-template-columns: repeat(4, 1fr); // 4 colunas
+        gap: 3rem; // 30px
+    }
+    .produto h3 {
+        font-size: 2rem; // Exemplo: Tamanho ainda maior (20px)
+    }
+}
+*/
+
+
+/* Seus outros estilos CSS (carrinho, footer, mensagens, etc.) */
+/* Mantenha todo o código que você já tem depois desta seção */
+/* ... */
+
