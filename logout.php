@@ -22,4 +22,3 @@ exit(); // Garante que o script pare após o redirecionamento
 ?>
 
 
-?>
