@@ -77,6 +77,7 @@ function atualizarCarrinho() {
     });
   }
 
+  
   // Calcula o total do carrinho
   const total = carrinho.reduce((acc, item) => acc + item.preco, 0);
 
