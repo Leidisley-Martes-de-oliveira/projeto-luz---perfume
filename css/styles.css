@@ -59,6 +59,7 @@ header h1 {
     display: flex; /* Já estava como display: flex */
     gap: 1.5rem; /* Espaço entre os links */
     align-items: center;
+    justify-content: space-between;
     /* Mantenha ou ajuste o position: absolute se quiser que fiquem no canto */
     position: absolute; /* Posiciona os links absolutamente */
     top: 50%; /* Alinha verticalmente ao centro do header */
